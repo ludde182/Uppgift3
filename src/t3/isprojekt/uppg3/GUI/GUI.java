@@ -14,8 +14,6 @@ import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import java.awt.Font;
-import java.awt.Color;
-
 public class GUI extends JFrame {
 
 	/**
@@ -23,9 +21,7 @@ public class GUI extends JFrame {
 	 */
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private String[] label = new String[] { "100 NOK", "Biggest Currency - SEK", "Address - Fotograferna AB",
-			"Medical History - Employee", "Relative Data - Employees", "Andreas Berglund - Customers",
-			"Bankkonton - kund #10 000", "All Customers", "All Employees" };
+	private String[] label = new String[] { "All Customers", "All Employees" };
 	private String[] docType = new String [] {"Microsoft Word" , "Microsoft Excel" , "Microsoft Access" };
 	private Controller ctrl = new Controller();
 	/**
@@ -53,7 +49,7 @@ public class GUI extends JFrame {
 		
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 400, 305);
+		setBounds(100, 100, 224, 372);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -72,71 +68,35 @@ public class GUI extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				String selectedItem = (String) comboBox.getSelectedItem();
 				String selectedFormat = (String) formatBox.getSelectedItem();
-				if (selectedItem.equals(label) && selectedFormat.equals("Microsoft Word")) {
-					System.out.println("Inget dokument hittades!");
-				}
 				
-				if (selectedItem.equals(label[7]) && selectedFormat.equals(docType[0])) {
+				if (selectedItem.equals(label[0]) && selectedFormat.equals(docType[0])) {
 					ctrl.openDocument("C:\\Uppgift3\\Uppgift2.1AllaKunder.docx");
 				}
 
-				if (selectedItem.equals(label[7]) && selectedFormat.equals(docType[1])) {
+				if (selectedItem.equals(label[0]) && selectedFormat.equals(docType[1])) {
 					ctrl.openDocument("C:\\Uppgift3\\uppg2.1AllaKunder.xlsx");
 				}
 				
-				if (selectedItem.equals(label[7]) && selectedFormat.equals(docType[2])) {
+				if (selectedItem.equals(label[0]) && selectedFormat.equals(docType[2])) {
 					ctrl.openDocument("C:\\Uppgift3\\Access\\Uac2.1AllaKunder.accdb");
 				}
 				
-				if (selectedItem.equals(label[8]) && selectedFormat.equals(docType[0])) {
+				if (selectedItem.equals(label[1]) && selectedFormat.equals(docType[0])) {
 					ctrl.openDocument("C:\\Uppgift3\\Uppgift2.2AllaAnstellda.docx");
 				}
 
-				if (selectedItem.equals(label[8]) && selectedFormat.equals(docType[1])) {
+				if (selectedItem.equals(label[1]) && selectedFormat.equals(docType[1])) {
 					ctrl.openDocument("C:\\Uppgift3\\uppg2.2AllaAnstellda.xlsx");
 				}
 				
-				if (selectedItem.equals(label[8]) && selectedFormat.equals(docType[2])) {
+				if (selectedItem.equals(label[1]) && selectedFormat.equals(docType[2])) {
 					ctrl.openDocument("C:\\Uppgift3\\Access\\Uac2.2AllaAnstellda.accdb");
 				}
 				
-//				if (selectedItem.equals(label[1]) && selectedFormat.equals(docType[2])) {
-//					ctrl.openDocument("C:\\Uppgift3\\uppg1.2.xlsx");
-//				}
-//				
-//				if (selectedItem.equals(label[2]) && selectedFormat.equals(docType[2])) {
-//					ctrl.openDocument("C:\\Uppgift3\\uppg1.3.xlsx");
-//				}
-//				
-//				if (selectedItem.equals(label[3]) && selectedFormat.equals(docType[2])) {
-//					ctrl.openDocument("C:\\Uppgift3\\uppg1.4.xlsx");
-//				}
-//				
-//				if (selectedItem.equals(label[4]) && selectedFormat.equals(docType[2])) {
-//					ctrl.openDocument("C:\\Uppgift3\\uppg1.5.xlsx");
-//				}
-//				
-//				if (selectedItem.equals(label[5]) && selectedFormat.equals(docType[1])); {
-//					ctrl.openDocument("C:\\Uppgift3\\uppg1.6.xlsx");
-//				}
-//				
-//				if (selectedItem.equals(label[5]) && selectedFormat.equals(docType[2])) {
-//					ctrl.openDocument("C:\\Uppgift3\\Uppgift2.1AllaKunder.docx");
-//				}
-//				
-//				if (selectedItem.equals(label[6]) && selectedFormat.equals(docType[2])) {
-//					ctrl.openDocument("C:\\Uppgift3\\uppg1.7.xlsx");
-//				}
-//				if (selectedItem.equals(label[7])) {
-//					ctrl.openDocument("C:\\Uppgift3\\uppg2.1AllaKunder.xlsx");
-//				}
-//				if (selectedItem.equals(label[8])) {
-//					ctrl.openDocument("C:\\Uppgift3\\uppg2.2AllaAnstellda.xlsx");
-//				}
 			}
 			
 		});
-		btnOpenDoc.setBounds(209, 90, 157, 26);
+		btnOpenDoc.setBounds(15, 210, 179, 26);
 		contentPane.add(btnOpenDoc);
 		
 
